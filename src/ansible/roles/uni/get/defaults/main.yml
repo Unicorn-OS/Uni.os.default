@@ -1,1 +1,3 @@
 local_mirror: "{{ lookup('ansible.builtin.env', 'HOME') }}/.uni/mirror"
+
+ava_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}/.uni/ava"
