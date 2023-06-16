@@ -1,0 +1,2 @@
+- include_tasks: cpu info.yml
+  when: get_cpu_info

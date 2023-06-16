@@ -1,0 +1,11 @@
+---
+
+# Uses: https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/
+
+- name: CPU has Virtualization extensions?
+  ansible.builtin.shell: egrep '^flags.*(vmx|svm)' /proc/cpuinfo
+  register: cpu_flags
+
+- name: Set virtualization
+  ansible.builtin.set_fact:
+    cpu_virtualization_enabled: "{{'false' if cpu_flags else 'true'}}"
